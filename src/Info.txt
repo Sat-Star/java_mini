@@ -1,0 +1,6 @@
+Name : Satyadeep Mishra
+USN : 1DS21CS193
+Semester : 3
+Proctor : Dr. D Sathya
+CGPA : 9.60
+

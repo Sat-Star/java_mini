@@ -4,8 +4,10 @@ import java.util.Scanner;
 public class Base {
     String name;
     String usn;
+    String proctor;
     int semester, a;
     double sgpa[] = new double[8];
+    double cgpa;
 
     void details() {
         Scanner sc = new Scanner(System.in);
@@ -38,27 +40,30 @@ public class Base {
 
     void proctor() {
         if (a < 26)
-            System.out.println("Proctor name : Dr. Kavitha");
+            proctor = "Dr. Kavitha";
         else if (a < 51)
-            System.out.println("Proctor name : Dr. Arbind Kumar Gupta");
+            proctor = "Dr. Arbind Kumar Gupta";
         else if (a < 76)
-            System.out.println("Proctor name : Dr. Roopa M.S");
+            proctor = "Dr. Roopa M.S";
         else if (a < 101)
-            System.out.println("Proctor name : Dr. Amutha S");
+            proctor = "Dr. Amutha S";
         else if (a < 126)
-            System.out.println("Proctor name : Dr. Mohammed Tajuddin");
+            proctor = "Dr. Mohammed Tajuddin";
         else if (a < 151)
-            System.out.println("Proctor name : Dr. Rohini T V");
+            proctor = "Dr. Rohini T V";
         else if (a < 176)
-            System.out.println("Proctor name : Prof. Prasad A M");
+            proctor = "Prof. Prasad A M";
         else if (a < 201)
-            System.out.println("Proctor name : Dr. D Sathya");
+            proctor = "Dr. D Sathya";
         else if (a < 226)
-            System.out.println("Proctor name : Prof. Sarala D V");
+            proctor = "Prof. Sarala D V";
         else if (a < 251)
-            System.out.println("Proctor name : Dr. Nagaraja J");
+            proctor = "Dr. Nagaraja J";
         else if (a < 276)
-            System.out.println("Proctor name : Prof. Muqhita Almas");
+            proctor = "Prof. Muqhita Almas";
+        else
+            proctor = "Proctor name NA ,Invalid usn";
+        System.out.println("Proctor name : " + proctor);
     }
 
     void CGPA() {
@@ -66,7 +71,7 @@ public class Base {
         for (int i = 1; i < semester; i++) {
             sum += sgpa[i];
         }
-        double cgpa = sum / (semester - 1);
+        cgpa = sum / (semester - 1);
         System.out.println("CGPA is : " + String.format("%.2f", cgpa));
     }
 
@@ -78,4 +83,9 @@ public class Base {
         CGPA();
     }
 
+    String txtoutput() {
+        String op = "Name : " + name + "\nUSN : " + usn + "\nSemester : " + semester + "\nProctor : " + proctor
+                + "\nCGPA : " + String.format("%.2f", cgpa) + "\n";
+        return op;
+    }
 }
